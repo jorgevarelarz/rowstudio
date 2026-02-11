@@ -44,6 +44,7 @@ export default async function handler(req, res) {
         action_source: 'website',
         event_source_url: eventSourceUrl,
         event_id: body.event_id || `evt_${Date.now()}`,
+        custom_data: body.custom_data && typeof body.custom_data === 'object' ? body.custom_data : undefined,
         user_data: {
           client_ip_address: getClientIp(req),
           client_user_agent: req.headers['user-agent'] || '',

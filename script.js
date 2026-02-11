@@ -6,6 +6,61 @@ const prefersReducedMotion =
   window.matchMedia &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+const metaQuery =
+  typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : new URLSearchParams('');
+
+function sendMetaCapiEvent(eventName, extraPayload = {}) {
+  if (typeof window === 'undefined') return;
+
+  const payload = {
+    event_name: eventName,
+    event_source_url: window.location.href,
+    ...extraPayload,
+  };
+
+  if (metaQuery.get('meta_test') === '1') {
+    payload.test_event_code = 'TEST36265';
+  }
+
+  fetch('/api/meta-capi', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+    keepalive: true,
+  })
+    .then((r) => r.json().catch(() => ({})))
+    .then((data) => {
+      if (metaQuery.get('meta_debug') === '1') {
+        console.log('Meta CAPI:', data);
+      }
+    })
+    .catch(() => {
+      // Non-blocking analytics call
+    });
+}
+
+function trackConversion(method, href) {
+  const eventId = `${method}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+  const metaEvent = method === 'whatsapp' ? 'Lead' : 'Contact';
+
+  if (typeof window.fbq === 'function') {
+    window.fbq('track', metaEvent, { method }, { eventID: eventId });
+  }
+
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'generate_lead', {
+      method,
+      event_label: href,
+    });
+  }
+
+  sendMetaCapiEvent(metaEvent, {
+    event_id: eventId,
+    event_source_url: href || window.location.href,
+    custom_data: { method },
+  });
+}
+
 function setMenuOpen(isOpen) {
   if (!menuBtn || !overlay) return;
   menuBtn.classList.toggle('active', isOpen);
@@ -189,32 +244,27 @@ function closeMenu() {
 // Server-side PageView via Meta CAPI endpoint (Vercel function)
 (() => {
   if (typeof window === 'undefined') return;
-
-  const params = new URLSearchParams(window.location.search);
-  const payload = {
-    event_name: 'PageView',
-    event_source_url: window.location.href,
-  };
-
-  // Use test_event_code only when explicitly requested: ?meta_test=1
-  if (params.get('meta_test') === '1') {
-    payload.test_event_code = 'TEST36265';
-  }
-
-  fetch('/api/meta-capi', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
-    keepalive: true,
-  })
-    .then((r) => r.json().catch(() => ({})))
-    .then((data) => {
-      if (params.get('meta_debug') === '1') {
-        // Debug only on explicit query flag
-        console.log('Meta CAPI:', data);
-      }
-    })
-    .catch(() => {
-      // Non-blocking analytics call
-    });
+  sendMetaCapiEvent('PageView');
 })();
+
+// Conversion tracking for contact actions
+document.addEventListener(
+  'click',
+  (e) => {
+    const a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+
+    const href = a.getAttribute('href') || '';
+    if (!href) return;
+
+    if (href.startsWith('mailto:')) {
+      trackConversion('email', href);
+      return;
+    }
+
+    if (href.includes('wa.me/') || href.includes('api.whatsapp.com/')) {
+      trackConversion('whatsapp', href);
+    }
+  },
+  { capture: true }
+);

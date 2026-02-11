@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://web-agencia-one.vercel.app/sitemap.xml
+
