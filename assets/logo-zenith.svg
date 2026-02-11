@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="120" viewBox="0 0 360 120" role="img" aria-label="Zenith">
+  <rect width="360" height="120" rx="18" fill="#0b1220"/>
+  <path d="M56 70 C78 22, 118 22, 140 70" fill="none" stroke="#a78bfa" stroke-width="10" stroke-linecap="round"/>
+  <path d="M56 70 C78 98, 118 98, 140 70" fill="none" stroke="#22d3ee" stroke-width="10" stroke-linecap="round" opacity="0.85"/>
+  <text x="155" y="74" font-family="Montserrat, Arial, sans-serif" font-size="40" font-weight="900" fill="#e5e7eb" letter-spacing="1">ZENITH</text>
+</svg>
+

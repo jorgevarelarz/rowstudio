@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="120" viewBox="0 0 360 120" role="img" aria-label="Skylab">
+  <rect width="360" height="120" rx="18" fill="#07111f"/>
+  <path d="M54 78c18-28 40-42 66-42s48 14 66 42" fill="none" stroke="#22d3ee" stroke-width="10" stroke-linecap="round"/>
+  <path d="M66 78c14-18 30-28 54-28s40 10 54 28" fill="none" stroke="#a78bfa" stroke-width="10" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="86" cy="46" r="6" fill="#eab308"/>
+  <circle cx="118" cy="36" r="5" fill="#eab308" opacity="0.9"/>
+  <circle cx="150" cy="46" r="6" fill="#eab308"/>
+  <text x="205" y="74" font-family="Montserrat, Arial, sans-serif" font-size="40" font-weight="900" fill="#e2e8f0" letter-spacing="1">SKYLAB</text>
+</svg>
+

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="120" viewBox="0 0 360 120" role="img" aria-label="ACME">
+  <rect width="360" height="120" rx="18" fill="#0f172a"/>
+  <path d="M62 78 L90 30 L118 78 Z" fill="#22c55e" opacity="0.95"/>
+  <path d="M90 44 L103 70 H77 Z" fill="#0f172a" opacity="0.55"/>
+  <text x="145" y="76" font-family="Montserrat, Arial, sans-serif" font-size="44" font-weight="900" fill="#e2e8f0" letter-spacing="2">ACME</text>
+</svg>
+

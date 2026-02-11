@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="120" viewBox="0 0 360 120" role="img" aria-label="Cobalt">
+  <rect width="360" height="120" rx="18" fill="#081018"/>
+  <path d="M58 60c0-18 14-32 32-32h28v16H90c-9 0-16 7-16 16s7 16 16 16h28v16H90c-18 0-32-14-32-32z" fill="#38bdf8" opacity="0.95"/>
+  <path d="M118 28h22c18 0 32 14 32 32s-14 32-32 32h-22V76h22c9 0 16-7 16-16s-7-16-16-16h-22V28z" fill="#22c55e" opacity="0.85"/>
+  <text x="185" y="74" font-family="Montserrat, Arial, sans-serif" font-size="40" font-weight="900" fill="#e2e8f0" letter-spacing="1">COBALT</text>
+</svg>
+

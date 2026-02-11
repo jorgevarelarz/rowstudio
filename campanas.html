@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROW STUDIO | Marketing & Estrategia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <div class="logo" aria-label="ROW STUDIO">ROW STUDIO</div>
+    <div class="menu-trigger" id="menu-btn" aria-label="Abrir menu" role="button" tabindex="0">
+        <span class="menu-label">MENU</span>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <div class="overlay-menu" id="overlay" aria-hidden="true">
+        <nav>
+            <a href="index.html" data-num="00">Inicio</a>
+            <a href="campanas.html" data-num="01">Campañas</a>
+            <a href="index.html#equipo" data-num="02">Equipo</a>
+            <a href="mailto:hola@tuagencia.com" data-num="03">Contacto</a>
+        </nav>
+    </div>
+
+    <header class="page-hero">
+        <div class="wrap">
+            <p class="kicker" data-reveal>Trabajo seleccionado.</p>
+            <h1 class="page-title" data-reveal>Nuestras campañas</h1>
+            <p class="page-sub" data-reveal>Proyectos destacados, colaboraciones y sistemas de contenido.</p>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <div class="campaign-list" data-reveal>
+
+            <article class="campaign-item">
+                <div class="camp-visual">
+                    <img src="assets/campana1.jpg" alt="Campaña 1">
+                </div>
+                <div class="camp-detail">
+                    <h2>Project 01</h2>
+                    <h3>VOIASH</h3>
+                    <p>Marketing global, contenido y estrategia 360 para una marca digital líder en viajes en España.</p>
+                </div>
+            </article>
+
+            <article class="campaign-item reverse">
+                <div class="camp-visual">
+                    <img src="assets/campana2.jpg" alt="Campaña 2">
+                </div>
+                <div class="camp-detail">
+                    <h2>Project 02</h2>
+                    <h3>Portfolio</h3>
+                    <p>SEOANE TEXTIL, ALI HOGAR, TIERRA MARINA, PLAZA DE VIGO, LA SIESTA y THE BELLA.</p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
