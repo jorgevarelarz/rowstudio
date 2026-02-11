@@ -185,3 +185,36 @@ function closeMenu() {
     { capture: true }
   );
 })();
+
+// Server-side PageView via Meta CAPI endpoint (Vercel function)
+(() => {
+  if (typeof window === 'undefined') return;
+
+  const params = new URLSearchParams(window.location.search);
+  const payload = {
+    event_name: 'PageView',
+    event_source_url: window.location.href,
+  };
+
+  // Use test_event_code only when explicitly requested: ?meta_test=1
+  if (params.get('meta_test') === '1') {
+    payload.test_event_code = 'TEST36265';
+  }
+
+  fetch('/api/meta-capi', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+    keepalive: true,
+  })
+    .then((r) => r.json().catch(() => ({})))
+    .then((data) => {
+      if (params.get('meta_debug') === '1') {
+        // Debug only on explicit query flag
+        console.log('Meta CAPI:', data);
+      }
+    })
+    .catch(() => {
+      // Non-blocking analytics call
+    });
+})();
