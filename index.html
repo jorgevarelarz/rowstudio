@@ -5,20 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROW STUDIO | Marketing & Estrategia</title>
     <meta name="description" content="ROW STUDIO en A Coruña: estrategia, creatividad, contenido y campañas para marcas que quieren crecer con una identidad clara y resultados medibles.">
-    <link rel="canonical" href="https://web-agencia-one.vercel.app/">
-    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://rowestudio.es/">
+    <link rel="alternate" hreflang="es-ES" href="https://rowestudio.es/">
+    <link rel="alternate" hreflang="x-default" href="https://rowestudio.es/">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="dark">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ROW STUDIO">
     <meta property="og:title" content="ROW STUDIO | Marketing & Estrategia">
     <meta property="og:description" content="Estrategia, creatividad y contenido desde A Coruña para marcas con ambición.">
-    <meta property="og:url" content="https://web-agencia-one.vercel.app/">
+    <meta property="og:url" content="https://rowestudio.es/">
+    <meta property="og:locale" content="es_ES">
     <link rel="icon" type="image/jpeg" sizes="489x489" href="assets/site-logo.jpg">
     <link rel="apple-touch-icon" href="assets/site-logo.jpg">
-    <meta property="og:image" content="https://web-agencia-one.vercel.app/assets/site-logo.jpg">
+    <meta property="og:image" content="https://rowestudio.es/assets/site-logo.jpg">
+    <meta property="og:image:alt" content="Logotipo de ROW STUDIO">
+    <meta property="og:image:width" content="489">
+    <meta property="og:image:height" content="489">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ROW STUDIO | Marketing & Estrategia">
     <meta name="twitter:description" content="Estrategia, creatividad y contenido desde A Coruña para marcas con ambición.">
-    <meta name="twitter:image" content="https://web-agencia-one.vercel.app/assets/site-logo.jpg">
+    <meta name="twitter:url" content="https://rowestudio.es/">
+    <meta name="twitter:image" content="https://rowestudio.es/assets/site-logo.jpg">
+    <meta name="twitter:image:alt" content="Logotipo de ROW STUDIO">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,17 +39,68 @@
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "ROW STUDIO",
-            "url": "https://web-agencia-one.vercel.app/",
-            "logo": "https://web-agencia-one.vercel.app/assets/site-logo.jpg",
-            "email": "veronica@rowestudio.es",
-            "telephone": "+34613848540",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "A Coruña",
-                "addressCountry": "ES"
-            }
+            "@graph": [
+                {
+                    "@type": "WebSite",
+                    "@id": "https://rowestudio.es/#website",
+                    "url": "https://rowestudio.es/",
+                    "name": "ROW STUDIO",
+                    "inLanguage": "es-ES"
+                },
+                {
+                    "@type": "WebPage",
+                    "@id": "https://rowestudio.es/#webpage",
+                    "url": "https://rowestudio.es/",
+                    "name": "ROW STUDIO | Marketing & Estrategia",
+                    "isPartOf": { "@id": "https://rowestudio.es/#website" },
+                    "about": { "@id": "https://rowestudio.es/#org" },
+                    "description": "ROW STUDIO en A Coruña: estrategia, creatividad, contenido y campañas para marcas que quieren crecer con una identidad clara y resultados medibles.",
+                    "inLanguage": "es-ES",
+                    "breadcrumb": { "@id": "https://rowestudio.es/#breadcrumb" }
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "@id": "https://rowestudio.es/#breadcrumb",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Inicio",
+                            "item": "https://rowestudio.es/"
+                        }
+                    ]
+                },
+                {
+                    "@type": "MarketingAgency",
+                    "@id": "https://rowestudio.es/#org",
+                    "name": "ROW STUDIO",
+                    "url": "https://rowestudio.es/",
+                    "image": "https://rowestudio.es/assets/site-logo.jpg",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://rowestudio.es/assets/site-logo.jpg",
+                        "width": 489,
+                        "height": 489
+                    },
+                    "email": "veronica@rowestudio.es",
+                    "telephone": "+34613848540",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "A Coruña",
+                        "addressCountry": "ES"
+                    },
+                    "areaServed": "ES",
+                    "contactPoint": [
+                        {
+                            "@type": "ContactPoint",
+                            "contactType": "sales",
+                            "email": "veronica@rowestudio.es",
+                            "telephone": "+34613848540",
+                            "availableLanguage": ["es", "en"]
+                        }
+                    ]
+                }
+            ]
         }
     </script>
     <script>
@@ -61,7 +125,7 @@
 
     <div class="logo" aria-label="ROW STUDIO">ROW STUDIO</div>
 
-    <div class="menu-trigger" id="menu-btn" aria-label="Abrir menu" role="button" tabindex="0">
+    <div class="menu-trigger" id="menu-btn" aria-label="Abrir menú" aria-controls="overlay" aria-expanded="false" role="button" tabindex="0">
         <span class="menu-label">MENU</span>
         <div class="bar"></div>
         <div class="bar"></div>
@@ -125,6 +189,33 @@
             </div>
         </div>
     </header>
+
+    <section class="consult-section" id="asesoria">
+        <div class="wrap">
+            <div class="consult-card" data-reveal>
+                <div class="consult-copy">
+                    <p class="section-eyebrow">TU PRIMERA ASESORÍA GRATIS</p>
+                    <h2 class="section-title">Hablemos de tu marca</h2>
+                    <p class="consult-text">
+                        En ROW ESTUDIO no trabajamos con presupuestos predefinidos ni genéricos. Cada uno de nuestros servicios se diseña de manera personalizada, adaptándonos a las necesidades específicas de cada cliente. Analizamos a fondo la marca, teniendo en cuenta todos los detalles y posibles escenarios que puedan surgir para ofrecer soluciones a medida y verdaderamente efectivas.
+                    </p>
+                    <p class="consult-text">
+                        Por eso, lo más importante es que nos reunamos y conozcamos de primera mano cuál es tu objetivo y qué quieres lograr con tu marca. Queremos entender hacia dónde quieres llegar para poder acompañarte con una estrategia única, alineada con tu visión y metas. En ROW ESTUDIO, cada proyecto es un universo propio, creativo e innovador.
+                    </p>
+                </div>
+                <div class="consult-cta">
+                    <a
+                        class="btn"
+                        href="https://wa.me/34613848540?text=Hola%20ROW%20ESTUDIO%2C%20quiero%20reservar%20mi%20primera%20asesor%C3%ADa%20gratis."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Reservar asesoría gratis por WhatsApp">
+                        <span>RESERVAR</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="services-section" id="servicios">
         <div class="wrap">
@@ -260,7 +351,7 @@
             <div class="team-grid" data-reveal>
                 <article class="team-card">
                     <div class="img-container">
-                        <img src="assets/equipo-creatividad.jpg" alt="Foto del equipo de estrategia" width="2824" height="1534" loading="lazy" decoding="async">
+                        <img src="assets/equipo-creatividad.jpg" alt="Foto del equipo creativo" width="2824" height="1534" loading="lazy" decoding="async">
                     </div>
                     <h3>Estrategia</h3>
                     <span class="role">Marca, datos y narrativa</span>
@@ -270,7 +361,7 @@
                 </article>
                 <article class="team-card">
                     <div class="img-container">
-                        <img src="assets/equipo-estrategia.jpg" alt="Foto del equipo creativo" width="2824" height="1534" loading="lazy" decoding="async">
+                        <img src="assets/equipo-estrategia.jpg" alt="Foto del equipo de estrategia" width="2824" height="1534" loading="lazy" decoding="async">
                     </div>
                     <h3>Creatividad</h3>
                     <span class="role">Diseño y contenido</span>

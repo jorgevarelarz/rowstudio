@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "web-agencia-one.vercel.app" }],
+      "destination": "https://rowestudio.es/$1",
+      "statusCode": 308
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.rowestudio.es" }],
+      "destination": "https://rowestudio.es/$1",
+      "statusCode": 308
+    }
+  ]
+}

@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://web-agencia-one.vercel.app/sitemap.xml
-
+Sitemap: https://rowestudio.es/sitemap.xml

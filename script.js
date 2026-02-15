@@ -64,6 +64,10 @@ function trackConversion(method, href) {
 function setMenuOpen(isOpen) {
   if (!menuBtn || !overlay) return;
   menuBtn.classList.toggle('active', isOpen);
+  menuBtn.setAttribute('aria-expanded', String(isOpen));
+  if (menuBtn.hasAttribute('aria-label')) {
+    menuBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+  }
   overlay.classList.toggle('open', isOpen);
   overlay.setAttribute('aria-hidden', String(!isOpen));
   document.body.classList.toggle('menu-open', isOpen);

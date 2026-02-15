@@ -17,7 +17,7 @@
 }
 
 /* Kept for compatibility (campanas.html uses it). Palette is already dark by default. */
-.dark-mode { }
+.dark-mode { color-scheme: dark; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -414,6 +414,39 @@ section { padding: 86px 0; position: relative; z-index: 1; }
 
 /* Services (editorial list) */
 .services-section { padding-top: 70px; }
+.consult-section {
+    padding: 70px 0 10px;
+    border-top: 1px solid var(--border);
+}
+.consult-card {
+    border: 1px solid var(--border);
+    background: rgba(239, 238, 237, 0.04);
+    border-radius: 20px;
+    padding: 26px 22px;
+    display: grid;
+    grid-template-columns: 1.6fr 0.7fr;
+    gap: 18px;
+    align-items: start;
+    box-shadow: 0 18px 55px var(--shadow);
+    backdrop-filter: blur(8px);
+}
+.consult-text {
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 10px 0 0;
+}
+.consult-cta {
+    display: grid;
+    align-content: start;
+    justify-items: start;
+    gap: 10px;
+    padding-top: 6px;
+}
+@media (max-width: 860px) {
+    .consult-card { grid-template-columns: 1fr; }
+    .consult-cta { justify-items: stretch; }
+    .consult-cta .btn { width: 100%; justify-content: center; }
+}
 .services-list {
     display: grid;
     border-top: 1px solid var(--border);
